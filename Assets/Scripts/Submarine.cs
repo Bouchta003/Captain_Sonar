@@ -16,8 +16,12 @@ public class Submarine : MonoBehaviour
 
     // state of the submarine's crew
     private string _name;
+<<<<<<< HEAD
     private string _color;
     [SerializeField] private List<Player> _players;
+=======
+    public List<Player> _players;
+>>>>>>> Online
 
     // positions of the submarine
     private Captain.Direction _currentCourse;
@@ -44,7 +48,7 @@ public class Submarine : MonoBehaviour
 
     #endregion
 
-    #region Properties
+        #region Properties
 
     /// <summary>
     /// 
@@ -79,7 +83,7 @@ public class Submarine : MonoBehaviour
     /// <summary>
     /// The name the players chose to refer to their crew
     /// </summary>
-    public string Name { get => _name; } // readonly, no reason to change the team's name mid-game
+    public string Name { get => _name; set => _name = value; } // readonly, no reason to change the team's name mid-game
 
     /// <summary>
     /// The players constituting the Submarin's crew
@@ -112,9 +116,13 @@ public class Submarine : MonoBehaviour
         _players            = GetComponentsInChildren<Player>().ToList(); // take the players chosen from the lobby available right before
 
         _nbOfTurnsSurfaced  = 0;
+<<<<<<< HEAD
 
         _gameMap            = GameManager.Instance.MainMap;
 
+=======
+        if(_gameMap!=null)
+>>>>>>> Online
         _trail              = new int[_gameMap.GetMap().GetLength(0), _gameMap.GetMap().GetLength(1)];
 
     }
